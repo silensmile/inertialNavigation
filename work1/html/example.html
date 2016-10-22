@@ -1,0 +1,290 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>example</title><meta name="generator" content="MATLAB 8.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-27"><meta name="DC.source" content="example.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">&#35835;&#21462;&#25968;&#25454;&#24182;&#23384;&#20648;</a></li><li><a href="#3">&#23450;&#20041;&#21021;&#22987;&#29366;&#24577;</a></li><li><a href="#4">&#20854;&#20182;&#30456;&#20851;&#24120;&#37327;</a></li><li><a href="#5">&#27714;&#35299;&#22235;&#20803;&#25968;&#31995;&#25968;q0,q1,q2,q3&#30340;&#21021;&#20540; &#20559;&#33322;&#36870;&#26102;&#38024;&#20026;&#27491;</a></li><li><a href="#6">&#24490;&#29615;&#35745;&#31639;&#23548;&#33322;&#21442;&#25968;&#24182;&#26356;&#26032;&#29366;&#24577;</a></li><li><a href="#7">&#32472;&#22270;&#37096;&#20998;</a></li></ul></div><pre class="codeinput">clc
+clear
+</pre><h2>&#35835;&#21462;&#25968;&#25454;&#24182;&#23384;&#20648;<a name="2"></a></h2><pre class="codeinput">a=load(<span class="string">'jlfw.mat'</span>);
+Wib_INSc=a.wib_INSc;f_INSc=a.f_INSc;
+L(1,:)=zeros(1,48000);
+Lambda(1,:)=zeros(1,48000);
+Vx(1,:)=zeros(1,48000);
+Vy(1,:)=zeros(1,48000);
+Vz(1,:)=zeros(1,48000);
+Rx(1,:)=zeros(1,48000);                                                     <span class="comment">%&#23450;&#20041;&#23384;&#25918;&#21359;&#37193;&#22280;&#26354;&#29575;&#21322;&#24452;&#25968;&#25454;&#30340;&#30697;&#38453;</span>
+Ry(1,:)=zeros(1,48000);                                                     <span class="comment">%&#23450;&#20041;&#23384;&#25918;&#23376;&#21320;&#22280;&#26354;&#29575;&#21322;&#24452;&#25968;&#25454;&#30340;&#30697;&#38453;</span>
+psi(1,:)=zeros(1,48000);                                                    <span class="comment">%&#23450;&#20041;&#23384;&#25918;&#20559;&#33322;&#35282;&#25968;&#25454;&#30340;&#30697;&#38453;</span>
+theta(1,:)=zeros(1,48000);                                                  <span class="comment">%&#23450;&#20041;&#23384;&#25918;&#20463;&#20208;&#35282;&#25968;&#25454;&#30340;&#30697;&#38453;</span>
+gamma(1,:)=zeros(1,48000);                                                  <span class="comment">%&#23450;&#20041;&#23384;&#25918;&#28378;&#36716;&#35282;&#25968;&#25454;&#30340;&#30697;&#38453;</span>
+I=eye(4);                                                                   <span class="comment">%&#23450;&#20041;&#22235;&#38454;&#30697;&#38453;&#29992;&#20110;&#35745;&#31639;&#22235;&#20803;&#25968;</span>
+Wibx(1,:)=Wib_INSc(1,:);                                                    <span class="comment">%&#25552;&#21462;&#38464;&#34746;&#27491;&#19996;&#26041;&#21521;&#35282;&#36895;&#29575;&#24182;&#23450;&#20041;</span>
+Wiby(1,:)=Wib_INSc(2,:);                                                    <span class="comment">%&#25552;&#21462;&#38464;&#34746;&#27491;&#21271;&#26041;&#21521;&#35282;&#36895;&#29575;&#24182;&#23450;&#20041;</span>
+Wibz(1,:)=Wib_INSc(3,:);                                                    <span class="comment">%&#25552;&#21462;&#38464;&#34746;&#22825;&#21521;&#35282;&#36895;&#29575;&#24182;&#23450;&#20041;</span>
+fibbx(1,:)=f_INSc(1,:);                                                     <span class="comment">%x&#26041;&#21521;&#30340;&#27604;&#21147;&#25968;&#25454;</span>
+fibby(1,:)=f_INSc(2,:);                                                     <span class="comment">%y&#26041;&#21521;&#30340;&#27604;&#21147;&#25968;&#25454;</span>
+fibbz(1,:)=f_INSc(3,:);                                                     <span class="comment">%z&#26041;&#21521;&#30340;&#27604;&#21147;&#25968;&#25454;</span>
+</pre><h2>&#23450;&#20041;&#21021;&#22987;&#29366;&#24577;<a name="3"></a></h2><pre class="codeinput">L(1,1)=39.975172/180*pi;                                                    <span class="comment">%&#32428;&#24230;&#21021;&#22987;&#20540; &#21333;&#20301;&#65306;&#24359;&#24230;</span>
+Lambda(1,1)=116.344695283/180*pi;                                           <span class="comment">%&#32463;&#24230;&#21021;&#22987;&#20540; &#21333;&#20301;&#65306;&#24359;&#24230;</span>
+Vx(1,1)=0.000048637;                                                        <span class="comment">%&#21021;&#22987;&#36895;&#24230;x&#26041;&#21521;&#20998;&#37327;</span>
+Vy(1,1)=0.000206947;                                                        <span class="comment">%&#21021;&#22987;&#36895;&#24230;y&#26041;&#21521;&#20998;&#37327;</span>
+Vz(1,1)=0.007106781;                                                        <span class="comment">%&#21021;&#22987;&#36895;&#24230;z&#26041;&#21521;&#20998;&#37327;</span>
+psi(1,1)=2*pi-91.637207 /180*pi;                                            <span class="comment">%&#20559;&#33322;&#35282;&#21021;&#22987;&#20540; &#21333;&#20301;&#65306;&#24359;&#24230;</span>
+theta(1,1)=0.120992605 /180*pi;                                             <span class="comment">%&#20463;&#20208;&#35282;&#21021;&#22987;&#20540; &#21333;&#20301;&#65306;&#24359;&#24230;</span>
+gamma(1,1)=0.010445947 /180*pi;                                             <span class="comment">%&#28378;&#36716;&#35282;&#21021;&#22987;&#20540; &#21333;&#20301;&#65306;&#24359;&#24230;</span>
+</pre><h2>&#20854;&#20182;&#30456;&#20851;&#24120;&#37327;<a name="4"></a></h2><pre class="codeinput">g0=9.7803267714;
+gk1=0.00193185138639;
+gk2=0.00669437999013;
+Wie=7.292115147e-5;                                                         <span class="comment">%&#22320;&#29699;&#33258;&#36716;&#35282;&#36895;&#24230;</span>
+Re=6378245;                                                                 <span class="comment">%&#38271;&#21322;&#24452;</span>
+e=1/298.3;                                                                  <span class="comment">%&#26925;&#22278;&#24230;</span>
+t=1/80;                                                                     <span class="comment">%&#37319;&#26679;&#26102;&#38388;</span>
+H=30;                                                                       <span class="comment">%&#39640;&#24230;</span>
+</pre><h2>&#27714;&#35299;&#22235;&#20803;&#25968;&#31995;&#25968;q0,q1,q2,q3&#30340;&#21021;&#20540; &#20559;&#33322;&#36870;&#26102;&#38024;&#20026;&#27491;<a name="5"></a></h2><pre class="codeinput">q(1,1)=cos(psi(1,1)/2)*cos(theta(1,1)/2)*cos(gamma(1,1)/2)<span class="keyword">...</span>
+      +sin(psi(1,1)/2)*sin(theta(1,1)/2)*sin(gamma(1,1)/2);                 <span class="comment">%q0</span>
+q(2,1)=cos(psi(1,1)/2)*sin(theta(1,1)/2)*cos(gamma(1,1)/2)<span class="keyword">...</span>
+      +sin(psi(1,1)/2)*cos(theta(1,1)/2)*sin(gamma(1,1)/2);                 <span class="comment">%q1</span>
+q(3,1)=cos(psi(1,1)/2)*cos(theta(1,1)/2)*sin(gamma(1,1)/2)<span class="keyword">...</span>
+      -sin(psi(1,1)/2)*sin(theta(1,1)/2)*cos(gamma(1,1)/2);                 <span class="comment">%q2</span>
+q(4,1)=cos(psi(1,1)/2)*sin(theta(1,1)/2)*sin(gamma(1,1)/2)<span class="keyword">...</span>
+      -sin(psi(1,1)/2)*cos(theta(1,1)/2)*cos(gamma(1,1)/2);                 <span class="comment">%q3</span>
+</pre><h2>&#24490;&#29615;&#35745;&#31639;&#23548;&#33322;&#21442;&#25968;&#24182;&#26356;&#26032;&#29366;&#24577;<a name="6"></a></h2><pre class="codeinput"><span class="keyword">for</span> i=1:48000-1
+    g=g0*(1+gk1*sin(L(i)^2)*(1-2*H/Re)/sqrt(1-gk2*sin(L(i)^2)));            <span class="comment">%&#35745;&#31639;&#37325;&#21147;&#21152;&#36895;&#24230;</span>
+    Rx(i)=Re/(1-e*(sin(L(i)))^2);                                           <span class="comment">%&#26681;&#25454;&#32428;&#24230;&#35745;&#31639;&#21359;&#37193;&#22280;&#26354;&#29575;&#21322;&#24452;</span>
+    Ry(i)=Re/(1+2*e-3*e*(sin(L(i)))^2);                                     <span class="comment">%&#26681;&#25454;&#32428;&#24230;&#35745;&#31639;&#23376;&#21320;&#22280;&#26354;&#29575;&#21322;&#24452;</span>
+    <span class="comment">%&#27714;&#35299;&#22235;&#20803;&#25968;&#23039;&#24577;&#30697;&#38453;</span>
+    q0=q(1,i);q1=q(2,i);q2=q(3,i);q3=q(4,i);
+    Ctb=[q0^2+q1^2-q2^2-q3^2, 2*(q1*q2+q0*q3), 2*(q1*q3-q0*q2);
+        2*(q1*q2-q0*q3),q2^2-q3^2+q0^2-q1^2,2*(q2*q3+q0*q1);
+        2*(q1*q3+q0*q2),2*(q2*q3-q0*q1),q3^2-q2^2-q1^2+q0^2;];
+    Cbt=Ctb';
+    fibt=Cbt*[fibbx(i);fibby(i);fibbz(i)];                                  <span class="comment">%&#27604;&#21147;&#25968;&#25454;</span>
+    fibtx(i)=fibt(1,1);fibty(i)=fibt(2,1);fibtz(i)=fibt(3,1);
+    Vx(1,i+1)=(fibtx(i)+(2*Wie*sin(L(i))+Vx(i)*tan(L(i))/Rx(i))*Vy(i)<span class="keyword">...</span>
+             -(2*Wie*cos(L(i))+Vx(i)/Rx(i))*Vz(i))*t+Vx(i);                 <span class="comment">%&#35745;&#31639;&#36895;&#24230;x&#26041;&#21521;&#20998;&#37327;</span>
+    Vy(1,i+1)=(fibty(i)-(2*Wie*sin(L(i))+Vx(i)*tan(L(i))/Rx(i))*Vx(i)<span class="keyword">...</span>
+             +Vy(i)*Vz(i)/Ry(i))*t+Vy(i);                                   <span class="comment">%&#35745;&#31639;&#36895;&#24230;y&#26041;&#21521;&#20998;&#37327;</span>
+    Vz(1,i+1)=(fibtz(i)+(2*Wie*cos(L(i)+Vx(i))/Rx(i))*Vx(i)<span class="keyword">...</span>
+             +Vy(i)*Vy(i)/Ry(i)-g)*t+Vz(i);                                 <span class="comment">%&#35745;&#31639;&#36895;&#24230;z&#26041;&#21521;&#20998;&#37327;</span>
+    Witt=[-Vy(i)/Ry(i);
+        Wie*cos(L(i))+Vx(i)/Rx(i);
+        Wie*sin(L(i))+Vx(i)*tan(L(i))/Rx(i)];                               <span class="comment">%&#27714;&#20986;&#24179;&#21488;&#25351;&#20196;&#35282;&#36895;&#24230;&#20540;</span>
+    Wibb=[Wibx(i);Wiby(i);Wibz(i)];
+    Wtbb=Wibb-Ctb*Witt;                                                     <span class="comment">%&#23558;&#25351;&#20196;&#35282;&#36895;&#24230;&#36716;&#25442;&#21040;&#24179;&#21488;&#22352;&#26631;&#31995;,&#24182;&#27714;&#35299;Wtbb</span>
+    L(1,i+1)=t*Vy(i)/Ry(i)+L(i);
+    Lambda(1,i+1)=t*Vx(i)/(Rx(i)*cos(L(i)))+ Lambda(i);
+    x=Wtbb(1,1)*t;y=Wtbb(2,1)*t;z=Wtbb(3,1)*t;                              <span class="comment">%&#27714;&#21462;&#36845;&#20195;&#30697;&#38453;&#20013;&#30340;&#21508;&#916;theta</span>
+    A=[0 -x -y -z;x 0 z -y;y -z 0 x;z y -x 0];                              <span class="comment">%&#27714;&#21462;&#36845;&#20195;&#30697;&#38453;[&#916;theta]</span>
+    T=x^2+y^2+z^2;                                                          <span class="comment">%&#35745;&#31639;[&#916;theta]^2&#30340;</span>
+    q(:,i+1)=((1-T/8+T^2/384)*I+(1/2-T/48)*A)*q(:,i);                       <span class="comment">%&#27714;q</span>
+    theta(i+1)=asin(Ctb(2,3));
+    <span class="comment">%&#20027;&#20540;&#21028;&#26029;</span>
+    <span class="keyword">if</span>(Ctb(2,2)&gt;=0)
+        <span class="keyword">if</span>(Ctb(2,1)&gt;=0)
+            psi(i+1)=2*pi-(atan(Ctb(2,1)/Ctb(2,2)));
+        <span class="keyword">else</span>
+            psi(i+1)=2*pi-(atan(Ctb(2,1)/Ctb(2,2))+2*pi);
+        <span class="keyword">end</span>
+    <span class="keyword">else</span>
+        <span class="keyword">if</span>(Ctb(2,1)&gt;0)
+            psi(i+1)=2*pi-(atan(Ctb(2,1)/Ctb(2,2))+pi);
+        <span class="keyword">else</span>
+            psi(i+1)=2*pi-(atan(Ctb(2,1)/Ctb(2,2))+pi);
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span>(Ctb(3,3)&gt;0)
+        gamma(i+1)=atan(-Ctb(1,3)/Ctb(3,3));
+    <span class="keyword">elseif</span>(Ctb(1,3)&lt;0)
+        gamma(i+1)=atan(-Ctb(1,3)/Ctb(3,3))+pi;
+    <span class="keyword">else</span>
+        gamma(i+1)=atan(-Ctb(1,3)/Ctb(3,3))-pi;
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+psi(1,1)=91.637207 /180*pi;
+</pre><h2>&#32472;&#22270;&#37096;&#20998;<a name="7"></a></h2><pre class="codeinput">figure;plot(Lambda*180/pi,L*180/pi);axis <span class="string">equal</span>;
+title(<span class="string">'&#32463;&#32428;&#24230;&#20301;&#32622;&#26354;&#32447;'</span>);xlabel(<span class="string">'&#32463;&#24230;/&deg;'</span>);ylabel(<span class="string">'&#32428;&#24230;/&deg;'</span>);grid <span class="string">on</span>;
+t=linspace(0,600-1/80,48000);
+figure; plot(t,Vx);title(<span class="string">'&#19996;&#35199;&#26041;&#21521;&#36895;&#24230;'</span>);xlabel(<span class="string">'&#26102;&#38388;/s'</span>);ylabel(<span class="string">'&#36895;&#24230;/m/s'</span>);grid <span class="string">on</span>;
+figure; plot(t,Vy);title(<span class="string">'&#21335;&#21271;&#26041;&#21521;&#36895;&#24230;'</span>);xlabel(<span class="string">'&#26102;&#38388;/s'</span>);ylabel(<span class="string">'&#36895;&#24230;/m/s'</span>);grid <span class="string">on</span>;
+figure; plot(t,theta*180/pi);title(<span class="string">'&#20463;&#20208;&#35282;'</span>);xlabel(<span class="string">'&#26102;&#38388;/s'</span>);ylabel(<span class="string">'&#24230;'</span>);grid <span class="string">on</span>;
+figure; plot(t,gamma*180/pi);title(<span class="string">'&#28378;&#36716;&#35282;'</span>);xlabel(<span class="string">'&#26102;&#38388;/s'</span>);ylabel(<span class="string">'&#24230;'</span>);grid <span class="string">on</span>;
+figure; plot(t,psi*180/pi);title(<span class="string">'&#20559;&#33322;&#35282;'</span>);xlabel(<span class="string">'&#26102;&#38388;/s'</span>);ylabel(<span class="string">'&#24230;'</span>);grid <span class="string">on</span>;
+</pre><img vspace="5" hspace="5" src="example_01.png" alt=""> <img vspace="5" hspace="5" src="example_02.png" alt=""> <img vspace="5" hspace="5" src="example_03.png" alt=""> <img vspace="5" hspace="5" src="example_04.png" alt=""> <img vspace="5" hspace="5" src="example_05.png" alt=""> <img vspace="5" hspace="5" src="example_06.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clc
+clear
+%% 读取数据并存储
+a=load('jlfw.mat');
+Wib_INSc=a.wib_INSc;f_INSc=a.f_INSc;
+L(1,:)=zeros(1,48000);
+Lambda(1,:)=zeros(1,48000);
+Vx(1,:)=zeros(1,48000);
+Vy(1,:)=zeros(1,48000);
+Vz(1,:)=zeros(1,48000);
+Rx(1,:)=zeros(1,48000);                                                     %定义存放卯酉圈曲率半径数据的矩阵
+Ry(1,:)=zeros(1,48000);                                                     %定义存放子午圈曲率半径数据的矩阵
+psi(1,:)=zeros(1,48000);                                                    %定义存放偏航角数据的矩阵
+theta(1,:)=zeros(1,48000);                                                  %定义存放俯仰角数据的矩阵
+gamma(1,:)=zeros(1,48000);                                                  %定义存放滚转角数据的矩阵
+I=eye(4);                                                                   %定义四阶矩阵用于计算四元数
+Wibx(1,:)=Wib_INSc(1,:);                                                    %提取陀螺正东方向角速率并定义
+Wiby(1,:)=Wib_INSc(2,:);                                                    %提取陀螺正北方向角速率并定义
+Wibz(1,:)=Wib_INSc(3,:);                                                    %提取陀螺天向角速率并定义
+fibbx(1,:)=f_INSc(1,:);                                                     %x方向的比力数据
+fibby(1,:)=f_INSc(2,:);                                                     %y方向的比力数据
+fibbz(1,:)=f_INSc(3,:);                                                     %z方向的比力数据
+%% 定义初始状态
+L(1,1)=39.975172/180*pi;                                                    %纬度初始值 单位：弧度
+Lambda(1,1)=116.344695283/180*pi;                                           %经度初始值 单位：弧度
+Vx(1,1)=0.000048637;                                                        %初始速度x方向分量
+Vy(1,1)=0.000206947;                                                        %初始速度y方向分量
+Vz(1,1)=0.007106781;                                                        %初始速度z方向分量
+psi(1,1)=2*pi-91.637207 /180*pi;                                            %偏航角初始值 单位：弧度
+theta(1,1)=0.120992605 /180*pi;                                             %俯仰角初始值 单位：弧度
+gamma(1,1)=0.010445947 /180*pi;                                             %滚转角初始值 单位：弧度
+%% 其他相关常量
+g0=9.7803267714;
+gk1=0.00193185138639;
+gk2=0.00669437999013;
+Wie=7.292115147e-5;                                                         %地球自转角速度
+Re=6378245;                                                                 %长半径
+e=1/298.3;                                                                  %椭圆度
+t=1/80;                                                                     %采样时间
+H=30;                                                                       %高度
+%% 求解四元数系数q0,q1,q2,q3的初值 偏航逆时针为正
+q(1,1)=cos(psi(1,1)/2)*cos(theta(1,1)/2)*cos(gamma(1,1)/2)...
+      +sin(psi(1,1)/2)*sin(theta(1,1)/2)*sin(gamma(1,1)/2);                 %q0
+q(2,1)=cos(psi(1,1)/2)*sin(theta(1,1)/2)*cos(gamma(1,1)/2)...
+      +sin(psi(1,1)/2)*cos(theta(1,1)/2)*sin(gamma(1,1)/2);                 %q1
+q(3,1)=cos(psi(1,1)/2)*cos(theta(1,1)/2)*sin(gamma(1,1)/2)...
+      -sin(psi(1,1)/2)*sin(theta(1,1)/2)*cos(gamma(1,1)/2);                 %q2
+q(4,1)=cos(psi(1,1)/2)*sin(theta(1,1)/2)*sin(gamma(1,1)/2)...
+      -sin(psi(1,1)/2)*cos(theta(1,1)/2)*cos(gamma(1,1)/2);                 %q3
+%% 循环计算导航参数并更新状态
+for i=1:48000-1
+    g=g0*(1+gk1*sin(L(i)^2)*(1-2*H/Re)/sqrt(1-gk2*sin(L(i)^2)));            %计算重力加速度
+    Rx(i)=Re/(1-e*(sin(L(i)))^2);                                           %根据纬度计算卯酉圈曲率半径
+    Ry(i)=Re/(1+2*e-3*e*(sin(L(i)))^2);                                     %根据纬度计算子午圈曲率半径
+    %求解四元数姿态矩阵
+    q0=q(1,i);q1=q(2,i);q2=q(3,i);q3=q(4,i);
+    Ctb=[q0^2+q1^2-q2^2-q3^2, 2*(q1*q2+q0*q3), 2*(q1*q3-q0*q2);
+        2*(q1*q2-q0*q3),q2^2-q3^2+q0^2-q1^2,2*(q2*q3+q0*q1);
+        2*(q1*q3+q0*q2),2*(q2*q3-q0*q1),q3^2-q2^2-q1^2+q0^2;];
+    Cbt=Ctb';
+    fibt=Cbt*[fibbx(i);fibby(i);fibbz(i)];                                  %比力数据
+    fibtx(i)=fibt(1,1);fibty(i)=fibt(2,1);fibtz(i)=fibt(3,1);
+    Vx(1,i+1)=(fibtx(i)+(2*Wie*sin(L(i))+Vx(i)*tan(L(i))/Rx(i))*Vy(i)...
+             -(2*Wie*cos(L(i))+Vx(i)/Rx(i))*Vz(i))*t+Vx(i);                 %计算速度x方向分量
+    Vy(1,i+1)=(fibty(i)-(2*Wie*sin(L(i))+Vx(i)*tan(L(i))/Rx(i))*Vx(i)...
+             +Vy(i)*Vz(i)/Ry(i))*t+Vy(i);                                   %计算速度y方向分量
+    Vz(1,i+1)=(fibtz(i)+(2*Wie*cos(L(i)+Vx(i))/Rx(i))*Vx(i)...
+             +Vy(i)*Vy(i)/Ry(i)-g)*t+Vz(i);                                 %计算速度z方向分量
+    Witt=[-Vy(i)/Ry(i);
+        Wie*cos(L(i))+Vx(i)/Rx(i);
+        Wie*sin(L(i))+Vx(i)*tan(L(i))/Rx(i)];                               %求出平台指令角速度值
+    Wibb=[Wibx(i);Wiby(i);Wibz(i)];
+    Wtbb=Wibb-Ctb*Witt;                                                     %将指令角速度转换到平台坐标系,并求解Wtbb
+    L(1,i+1)=t*Vy(i)/Ry(i)+L(i);
+    Lambda(1,i+1)=t*Vx(i)/(Rx(i)*cos(L(i)))+ Lambda(i);
+    x=Wtbb(1,1)*t;y=Wtbb(2,1)*t;z=Wtbb(3,1)*t;                              %求取迭代矩阵中的各Δtheta
+    A=[0 -x -y -z;x 0 z -y;y -z 0 x;z y -x 0];                              %求取迭代矩阵[Δtheta]
+    T=x^2+y^2+z^2;                                                          %计算[Δtheta]^2的
+    q(:,i+1)=((1-T/8+T^2/384)*I+(1/2-T/48)*A)*q(:,i);                       %求q
+    theta(i+1)=asin(Ctb(2,3));
+    %主值判断
+    if(Ctb(2,2)>=0)
+        if(Ctb(2,1)>=0)
+            psi(i+1)=2*pi-(atan(Ctb(2,1)/Ctb(2,2)));
+        else
+            psi(i+1)=2*pi-(atan(Ctb(2,1)/Ctb(2,2))+2*pi);
+        end
+    else
+        if(Ctb(2,1)>0)
+            psi(i+1)=2*pi-(atan(Ctb(2,1)/Ctb(2,2))+pi);
+        else
+            psi(i+1)=2*pi-(atan(Ctb(2,1)/Ctb(2,2))+pi);
+        end
+    end
+    if(Ctb(3,3)>0)
+        gamma(i+1)=atan(-Ctb(1,3)/Ctb(3,3));
+    elseif(Ctb(1,3)<0)
+        gamma(i+1)=atan(-Ctb(1,3)/Ctb(3,3))+pi;
+    else
+        gamma(i+1)=atan(-Ctb(1,3)/Ctb(3,3))-pi;
+    end
+end
+psi(1,1)=91.637207 /180*pi;
+%% 绘图部分
+figure;plot(Lambda*180/pi,L*180/pi);axis equal;
+title('经纬度位置曲线');xlabel('经度/°');ylabel('纬度/°');grid on;
+t=linspace(0,600-1/80,48000);
+figure; plot(t,Vx);title('东西方向速度');xlabel('时间/s');ylabel('速度/m/s');grid on;
+figure; plot(t,Vy);title('南北方向速度');xlabel('时间/s');ylabel('速度/m/s');grid on;
+figure; plot(t,theta*180/pi);title('俯仰角');xlabel('时间/s');ylabel('度');grid on;
+figure; plot(t,gamma*180/pi);title('滚转角');xlabel('时间/s');ylabel('度');grid on;
+figure; plot(t,psi*180/pi);title('偏航角');xlabel('时间/s');ylabel('度');grid on;
+##### SOURCE END #####
+--></body></html>
