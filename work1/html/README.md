@@ -1,9 +1,7 @@
-<div class="content">
+# Contents
+___
 
-Contents
---------
 
-<div>
 
 -   [读取数据并存储](#2)
 -   [定义初始状态](#3)
@@ -12,7 +10,6 @@ Contents
 -   [循环计算导航参数并更新状态](#6)
 -   [绘图部分](#7)
 
-</div>
 
 ``` matlab
 clc
